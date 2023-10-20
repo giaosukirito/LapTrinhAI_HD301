@@ -14,8 +14,9 @@ public class Main {
         nodeE.addEdge(nodeG, 6); nodeF.addEdge(nodeG, 1);
         ISearchAlgo bfs = new BreadthFirstSearchAlgo();
         ISearchAlgo dfs = new DepthFirstSearchAlgo();
-        Node result = dfs.execute(nodeS,"B" ,"G");
-
+        ISearchAlgo ucs = new UniformCostSearchAlgo();
+        DepthLimitedSearch dls = new DepthLimitedSearch();
+        Node result = dls.execute(nodeS,"G",2);
         System.out.println(NodeUtils.printPath(result) + " " + result.getPathCost());
     }
 }
